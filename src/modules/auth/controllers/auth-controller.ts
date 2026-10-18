@@ -9,9 +9,9 @@ export class AuthController {
     next: NextFunction
   ): Promise<Response | void> {
     try {
-      const { email, password } = request.body;
+      const { email, passwordRaw } = request.body;
 
-      if (!email || !password) {
+      if (!email || !passwordRaw) {
         throw new AppError('E-mail e senha são obrigatórios para realizar o login.', 400);
       }
 
@@ -23,9 +23,8 @@ export class AuthController {
       
       const authData = await authenticateUserService.execute({
         email,
-        passwordRaw: password,
-        tenantId: request.tenant.id, // Isolamento estrito por inquilino
-      });
+        passwordRaw, 
+        tenantId: request.tenant.id, 
 
       return response.status(200).json(authData);
     } catch (error) {
