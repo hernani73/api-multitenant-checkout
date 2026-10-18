@@ -4,6 +4,7 @@ export interface User {
   email: string;
   passwordHash: string; 
   tenantId: string; 
+} 
 
 export const mockUsersDatabase: User[] = [
   {

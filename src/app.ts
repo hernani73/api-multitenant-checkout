@@ -1,4 +1,4 @@
-import 'express-async-errors'; // 🚨 IMPORTANTE: Deve ser o primeiro import do arquivo!
+import 'express-async-errors';
 import express, { Request, Response, NextFunction } from 'express';
 import cors from 'cors';
 import { routes } from './routes';
@@ -10,12 +10,14 @@ app.use(cors());
 app.use(express.json());
 app.use(routes);
 
+// Middleware global de tratamento de erros corrigido
 app.use((
   error: Error, 
   _request: Request, 
   response: Response, 
   _next: NextFunction
-): void => { 
+): void => {
+  if (error instanceof AppError) {
     response.status(error.statusCode).json({
       status: 'error',
       message: error.message
