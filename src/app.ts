@@ -1,4 +1,4 @@
-import 'express-async-errors';
+import 'express-async-errors/index.js'; 
 import express, { Request, Response, NextFunction } from 'express';
 import cors from 'cors';
 import { routes } from './routes';
