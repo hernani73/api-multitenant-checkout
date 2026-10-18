@@ -24,7 +24,8 @@ export class AuthController {
       const authData = await authenticateUserService.execute({
         email,
         passwordRaw, 
-        tenantId: request.tenant.id, 
+        tenantId: request.tenant.id 
+      });
 
       return response.status(200).json(authData);
     } catch (error) {
