@@ -7,7 +7,7 @@ interface TokenPayload {
   tenantId: string;
   iat: number;
   exp: number;
-  sub: string; // ID do Usuário
+  sub: string;
 }
 
 export function ensureAuthenticated(
