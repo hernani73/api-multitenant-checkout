@@ -1,4 +1,3 @@
-import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { env } from '../../../core/config/env';
 import { AppError } from '../../../core/errors/AppError';
