@@ -1,7 +1,6 @@
 import dotenv from 'dotenv';
 import path from 'path';
 
-// Busca o arquivo .env dinamicamente a partir da raiz onde o projeto foi iniciado
 dotenv.config({ path: path.resolve(process.cwd(), '.env') });
 
 const requiredEnvs = ['JWT_SECRET', 'STRIPE_API_KEY'] as const;

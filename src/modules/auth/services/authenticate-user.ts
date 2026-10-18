@@ -7,7 +7,7 @@ import { mockUsersDatabase } from '../models/user';
 interface AuthenticateUserDTO {
   email: string;
   passwordRaw: string;
-  tenantId: string;nantResolver
+  tenantId: string;
 }
 
 interface AuthenticationResponse {
@@ -46,8 +46,8 @@ export class AuthenticateUserService {
       }, 
       env.jwtSecret, 
       {
-        subject: user.id, // Armazena o userId de forma nativa na claim 'sub'
-        expiresIn: env.jwtExpiresIn,
+        subject: user.id,
+        expiresIn: env.jwtExpiresIn as jwt.SignOptions['expiresIn'] // Tipagem exata resolvida aqui
       }
     );
 
