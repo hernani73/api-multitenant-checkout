@@ -101,3 +101,5 @@ Abaixo estão os cenários prontos mapeados no banco de dados em memória para v
   }
   ```
 > *Ao enviar, a API retornará uma propriedade `checkoutUrl`. Copie o link e cole-o no seu navegador para ver o painel oficial de testes do Stripe!*
+
+Documentação Postman: https://hernani-souza-s-team.docs.buildwithfern.com/my-collection/introduction
